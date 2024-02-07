@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/personal_homepage/static/js/main.801be5dd.js",
+    "static/js/592.744f8ef4.chunk.js": "/personal_homepage/static/js/592.744f8ef4.chunk.js",
+    "static/media/avatar.jpeg": "/personal_homepage/static/media/avatar.6877a118ab274e60237e.jpeg",
+    "static/media/hireMe.svg": "/personal_homepage/static/media/hireMe.ac35ea7241b3895302d4216f225e14c2.svg",
+    "index.html": "/personal_homepage/index.html",
+    "static/media/ellipse.svg": "/personal_homepage/static/media/ellipse.eeb4f7812316214c2df698eb5cc55c44.svg",
+    "main.801be5dd.js.map": "/personal_homepage/static/js/main.801be5dd.js.map",
+    "592.744f8ef4.chunk.js.map": "/personal_homepage/static/js/592.744f8ef4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.801be5dd.js"
+  ]
+}
