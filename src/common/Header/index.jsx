@@ -1,6 +1,6 @@
 import { Button, Content, Description, HeaderWrapper, Heading, ImgStyled, Paragraph } from "./styled"
-import avatar from "../../images/avatar.jpeg"
-import { ReactComponent as HireMe } from "../../images/icons/hireMe.svg"
+import avatar from "../../common/images/avatar.jpeg"
+import { ReactComponent as HireMe } from "../../common/images/icons/hireMe.svg"
 export const Header = () => {
 
    return (

@@ -8,32 +8,32 @@ export const HeaderWrapper = styled.header`
     position: relative;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        flex-direction: column;
+        
         gap: 32px;
         margin-top: 32px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        flex-direction: column;
+    grid-template-columns: 1fr;
+
         gap: 12px;
         margin-top: 32px;
     }
 `;
 export const ImgStyled = styled.img`
-    width: 30vw;
+    width: 25vw;
+    height:25vw;
     border-radius: 50%;
-    min-width: 132px;
-    min-height: 132px;
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.narrow}) {
-        width: 25vw;
-        height: 25vw;
-    }
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    
+    /* @media(max-width: ${({ theme }) => theme.breakpoints.narrow}) {
         width: 20vw;
         height: 20vw;
-    }
+    } */
+
+    /* @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        width: 15vw;
+        height: 15vw;
+    } */
 `;
 export const Content = styled.div`
     padding-top: 68px;
