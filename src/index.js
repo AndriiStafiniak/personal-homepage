@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './features/PersonalHomepage/App';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './globalStyle';
 import { ThemeProvider } from 'styled-components';
