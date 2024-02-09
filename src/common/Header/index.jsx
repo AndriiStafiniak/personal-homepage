@@ -10,7 +10,7 @@ export const Header = () => {
             <Paragraph>This is</Paragraph>
             <Heading>Andrii Stafiniak</Heading>
             <Description>👨🏻‍💻  I’m a passionate Frontend Developer in love with React. I am looking for my first job and programming challenges. I want to explore new technologies, improve my skills and gain knowledge among other programmers.</Description>
-            <Button href="mailto:andrii.stafiniak@gmai.com">
+            <Button href="mailto:andrii.stafiniak@gmail.com">
                <HireMe />
                Hire Me
             </Button>

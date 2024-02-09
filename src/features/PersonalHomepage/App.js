@@ -5,6 +5,7 @@ import { MainStyled } from "./styled";
 import { skills, skillsToLearn } from "../../common/assests/skillset";
 import HeaderPortfolio from "../../common/PortfolioSection";
 import { Footer } from "../../common/Footer";
+import { PortfolioProjects } from "./PortfolioProjects";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       </MainStyled>
       <section>
         <HeaderPortfolio />
+        <PortfolioProjects />
 
       </section>
       <Footer />
