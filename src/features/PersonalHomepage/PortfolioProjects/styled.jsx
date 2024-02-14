@@ -50,6 +50,7 @@ export const Title = styled.h3`
     letter-spacing: 1.2px;
     padding: 0;
     margin: 0;
+    cursor: s-resize;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 16px;
@@ -65,6 +66,7 @@ export const Description = styled.p`
     letter-spacing: 0.9px;
     padding: 0;
     margin: 24px 0;
+    cursor: s-resize;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         margin: 16px 0;
@@ -87,6 +89,7 @@ export const StyledLink = styled.a`
     letter-spacing: 0.9px;
     word-break: break-all;
     transition: color 0.3s;
+    cursor: pointer;
 
     &:hover {
         color: ${({ theme }) => theme.colors.azureRadiance};

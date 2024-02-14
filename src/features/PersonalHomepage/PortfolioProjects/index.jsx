@@ -26,10 +26,10 @@ export const PortfolioProjects = () => {
                <Description>{project.description}</Description>
                <LinkWrapper>
                   {project.homepage ?
-                     <><Paraghaph>Demo:</Paraghaph> <StyledLink href={project.homepage} target="_blank">{project.homepage}</StyledLink></>
+                     <><Paraghaph>Demo:</Paraghaph> <StyledLink href={project.homepage} target="_blank">{project.name}</StyledLink></>
                      : ""}
                   {project.html_url ?
-                     <><Paraghaph>Code:</Paraghaph> <StyledLink href={project.html_url} target="_blank">{project.html_url}</StyledLink></>
+                     <><Paraghaph>Code:</Paraghaph> <StyledLink href={project.html_url} target="_blank">check in GitHub</StyledLink></>
                      : ""}
                </LinkWrapper>
 
