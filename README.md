@@ -1,7 +1,7 @@
 # Personal Homepage
 
 ## Demo
-You can visit my website here: [personal-homepage](https:// https://andriistafiniak.github.io/personal_homepage/)
+You can visit my website here: [personal-homepage](https://andriistafiniak.github.io/personal-homepage/)
 
 
 ## Description
