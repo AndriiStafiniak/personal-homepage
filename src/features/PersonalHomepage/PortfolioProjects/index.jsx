@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { fethProjects } from "./fetchProjects";
+import { Description, LinkWrapper, Paraghaph, PortfolioItemStyled, PortfolioWrapper, StyledLink, Title } from "./styled";
 
 export const PortfolioProjects = () => {
    const { isLoading, isPaused, error, data } = useQuery({
@@ -18,10 +19,22 @@ export const PortfolioProjects = () => {
    }
 
    return (
-      <>
+      <PortfolioWrapper>
          {data.map((project) =>
-            <li key={project.id}>name: {project.name} link: {project.html_url}</li>)}
-      </>
+            <PortfolioItemStyled key={project.id}>
+               <Title>{project.name}</Title>
+               <Description>{project.description}</Description>
+               <LinkWrapper>
+                  {project.homepage ?
+                     <><Paraghaph>Demo:</Paraghaph> <StyledLink href={project.homepage} target="_blank">{project.homepage}</StyledLink></>
+                     : ""}
+                  {project.html_url ?
+                     <><Paraghaph>Code:</Paraghaph> <StyledLink href={project.html_url} target="_blank">{project.html_url}</StyledLink></>
+                     : ""}
+               </LinkWrapper>
+
+            </PortfolioItemStyled>)}
+      </PortfolioWrapper>
    )
 
 }
