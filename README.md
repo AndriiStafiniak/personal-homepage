@@ -1,12 +1,14 @@
 # Personal Homepage
 
+![Project Screenshot](/readme_IMG.png)
+
 ## Demo
 You can visit my website here: [personal-homepage](https://andriistafiniak.github.io/personal-homepage/)
 
 
 ## Description
-
 This is my Personal Homepage, my business card. It contains information about me and my projects.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Technologies
