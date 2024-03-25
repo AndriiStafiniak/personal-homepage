@@ -1,6 +1,6 @@
 import { IconStyle } from '../Footer/styled';
-import { ReactComponent as GithubIcon } from "../images/icons/socialsIcons/gitHub.svg";
-import { ReactComponent as FbIcon } from '../images/icons/socialsIcons/fb.svg';
+import { ReactComponent as GithubIcon }from "../images/icons/socialsIcons/gitHub.svg";
+import { ReactComponent as FbIcon }from '../images/icons/socialsIcons/fb.svg';
 import { ReactComponent as LinkedinIcon } from '../images/icons/socialsIcons/linkd.svg';
 import { ReactComponent as InstaIcon } from '../images/icons/socialsIcons/instg.svg';
 
@@ -25,4 +25,4 @@ export const socials = [
       url: 'https://www.instagram.com/staff_andre/',
       Icon: IconStyle(InstaIcon),
    },
-] as const;
+] 
