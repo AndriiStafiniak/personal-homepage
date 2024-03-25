@@ -25,4 +25,4 @@ export const socials = [
       url: 'https://www.instagram.com/staff_andre/',
       Icon: IconStyle(InstaIcon),
    },
-]
+] as const;

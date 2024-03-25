@@ -21,11 +21,11 @@ export const skills = [
    "Redux-Saga",
    "Git",
    "CSS Flexbox",
-];
+] as const;
 
 export const skillsToLearn = [
    "TypeScript",
    "Node.js",
    "React Context",
    "JS classes",
-];
+] as const;
