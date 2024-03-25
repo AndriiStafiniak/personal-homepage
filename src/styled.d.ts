@@ -1,10 +1,10 @@
 import "styled-components";
 import {ReactFunctionOrComponent} from React;
 
-import { theme } from "./theme";
+import { themeLight } from "./theme";
 import React from "react";
 
-type Theme = typeof theme;
+type Theme = typeof themeLight;
 
 declare module "styled-components" {
   export interface DefaultTheme extends Theme {}
