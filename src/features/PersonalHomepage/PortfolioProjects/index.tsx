@@ -1,26 +1,29 @@
 import { useQuery } from "@tanstack/react-query";
-import { fethProjects } from "./fetchProjects";
+import { Projects, fethProjects } from "./fetchProjects";
 import { Description, LinkWrapper, Paraghaph, PortfolioItemStyled, PortfolioWrapper, StyledLink, Title } from "./styled";
-
-export const PortfolioProjects = () => {
-   const { isLoading, isPaused, error, data } = useQuery({
+import { ReactElement } from "react";
+interface Portfolio {
+   projects: Projects
+}
+export const PortfolioProjects = () : ReactElement | null => {
+   const { isLoading, isPaused, error, data } = useQuery <Projects[]>({
       queryKey: ["projects"],
       queryFn: fethProjects,
       staleTime: 1000 * 15, //15 seconds
    });
    if (isPaused) {
-      <p>Sprawdz polączenie z internetem</p>
+      return<div>Sprawdz polączenie z internetem</div>
    }
    if (isLoading) {
-      return <p>trwa ładowanie</p>
+      return <div>trwa ładowanie</div>
    }
    if (error) {
-      return `nie udało się pobrać danych z powodu: ${error.message}`
+      return <div>`nie udało się pobrać danych z powodu: ${error.message}`</div>
    }
 
    return (
       <PortfolioWrapper>
-         {data.map((project) =>
+         {data?.map((project) =>
             <PortfolioItemStyled key={project.id}>
                <Title>{project.name}</Title>
                <Description>{project.description}</Description>

@@ -7,6 +7,7 @@ import HeaderPortfolio from "../../common/PortfolioSection";
 import { Footer } from "../../common/Footer";
 import { PortfolioProjects } from "./PortfolioProjects";
 
+
 function App() {
   return (
     <Container>
@@ -24,7 +25,6 @@ function App() {
       <section>
         <HeaderPortfolio />
         <PortfolioProjects />
-
       </section>
       <Footer />
     </Container>

@@ -1,8 +1,10 @@
+
 import { StyledSection, Heading, Body, StyledList, ListItem, Span, Image } from "./styled";
-import { ReactNode, ReactElement } from "react";
-interface SectionProps {
+import { ReactNode } from "react";
+
+export interface SectionProps {
    title: ReactNode;
-   body: ReactElement[];
+   body: string[];
 }
 export const Section = ({ title, body } : SectionProps) => {
    return (
@@ -12,7 +14,7 @@ export const Section = ({ title, body } : SectionProps) => {
          </Heading>
          <Body>
             <StyledList>
-               {body ? body.map((skill: ReactElement, index: number) => (
+               {body ? body.map((skill: string, index: number) => (
                   <ListItem key={index}>
                      <Image />
                      <Span>{skill}</Span>
