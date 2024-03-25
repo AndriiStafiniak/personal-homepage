@@ -4,8 +4,7 @@ const common = {
       tablet: "991px",
       narrow: "1520px",
    },
-
-}
+} as const;
 
 const colors = {
    colors: {
@@ -23,7 +22,7 @@ const colors = {
       semiGrey: 'rgba(209, 213, 218, 0.30)',
       anakiwa: '#A3CEFF',
    }
-}
+} as const;
 
 export const themeLight = {
    ...common,
@@ -40,7 +39,7 @@ export const themeLight = {
       background: colors.colors.slateGray,
       button: colors.colors.mercury,
    }
-}
+} as const;
 
 // export const themeDark = {
 //    ...common,

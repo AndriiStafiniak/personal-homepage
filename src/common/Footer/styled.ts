@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const StyledFooter = styled.footer`
     display: flex;
     gap: 66px;
@@ -76,7 +77,7 @@ export const Icons = styled.div`
     }
 `;
 
-export const IconStyle = (Icon) => styled(Icon)`
+export const IconStyle = (Icon: React.ElementType) => styled(Icon)`
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) { 
         width: 32px;
         height: 32px;
