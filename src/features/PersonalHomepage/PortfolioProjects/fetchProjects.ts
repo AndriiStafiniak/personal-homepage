@@ -1,11 +1,13 @@
-export interface Projects {
-   id: number;
-   name: string;
-   description: string;
-   html_url: string;
-   homepage: string;
+interface Project {
+  id: number;
+  name: string;
+  description: string | null;
+  html_url: string;
+  homepage: string | null;
+  pushed_at: string;
+  updated_at: string;
 }
-export const fethProjects = () =>
-   fetch("https://api.github.com/users/AndriiStafiniak/repos")
-   .then(response => response.json())
-   .then((data: any) => data as Projects[])
+export const fethProjects = (): Promise<Project[]> =>
+  fetch("https://api.github.com/users/AndriiStafiniak/repos")
+    .then((response) => response.json())
+    .then((data) => data as Project[]);
