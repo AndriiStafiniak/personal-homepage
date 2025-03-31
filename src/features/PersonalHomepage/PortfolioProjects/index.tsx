@@ -40,16 +40,10 @@ export const PortfolioProjects = (): ReactElement | null => {
 
   // Sort data with the specific order
   const sortedData = data
-    ? data.sort((a: Project, b: Project) => {
-        if (a.name === "HauntedHouse3D") return -1;
-        if (b.name === "HauntedHouse3D") return 1;
-        if (a.name === "Movie-browser") return -1;
-        if (b.name === "Movie-browser") return 1;
-
-        return (
+    ? [...data].sort(
+        (a, b) =>
           new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime()
-        );
-      })
+      )
     : [];
 
   return (
