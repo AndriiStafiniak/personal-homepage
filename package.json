@@ -2,6 +2,7 @@
   "name": "personal_homepage",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://andriistafiniak.github.io/personal-homepage",
   "dependencies": {
     "@tanstack/react-query": "^5.18.1",
     "@types/react": "^18.2.70",
