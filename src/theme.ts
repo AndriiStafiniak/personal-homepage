@@ -27,6 +27,7 @@ const colors = {
 export const themeLight = {
    ...common,
    ...colors,
+   colorText: colors.colors.mineShaft,
    background: colors.colors.alto,
    paragraph: colors.colors.slateGray,
    backgroundItem: colors.colors.white,
@@ -41,19 +42,29 @@ export const themeLight = {
    }
 } as const;
 
-// export const themeDark = {
-//    ...common,
-//    ...colors,
-//    background: colors.colors.mineShaft,
-//    paragraph: colors.colors.white,
-//    backgroundItem: colors.colors.semiDark,
-//    sectionHeading: colors.colors.white,
-//    portfolioHeading: colors.colors.white,
-//    icon: colors.colors.white,
-//    loader: colors.colors.littleGrey,
-//    mode: {
-//       color: colors.colors.black,
-//       background: colors.colors.white,
-//       button: colors.colors.semiDark,
-//    }
-// }
+export const themeDark = {
+   ...common,
+   ...colors,
+   colorText: colors.colors.white,
+   background: colors.colors.mineShaft,
+   paragraph: colors.colors.white,
+   backgroundItem: colors.colors.semiDark,
+   sectionHeading: colors.colors.white,
+   portfolioHeading: colors.colors.anakiwa,
+   icon: colors.colors.white,
+   loader: colors.colors.littleGrey,
+   mode: {
+      color: colors.colors.black,
+      background: colors.colors.white,
+      button: colors.colors.semiDark,
+   }
+} as const;
+
+export type Theme = typeof themeLight;
+
+export const themes = {
+   light: themeLight,
+   dark: themeDark,
+} as const;
+
+export type ThemeMode = keyof typeof themes;
