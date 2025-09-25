@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { ReactComponent as Ellipse } from "../../common/images//icons/ellipse.svg";
 
 export const StyledSection = styled.section`
     max-width: 1216px;
     background-color: ${({ theme }) => theme.backgroundItem};
     padding: 32px;
     box-shadow: 0px 16px 58px 0px rgba(9, 10, 51, 0.03), 0px -2px 50px 0px rgba(9, 10, 51, 0.02);
+    border-radius: 16px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         padding: 16px;
@@ -36,51 +36,37 @@ export const Body = styled.div`
 export const StyledList = styled.ul`
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
-    padding: 30px 32px;
-    padding-left: 0;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 32px 0 0;
     margin: 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}){
-        grid-template-columns: 1fr;
-        padding: 16px;
-        padding-left: 0;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         grid-template-columns: 1fr;
-        padding: 16px;
-        padding-left: 0;
     }
 `;
 
 export const ListItem = styled.li`
-    color: ${({ theme }) => theme.colors.scienceBlue};
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 140%;
-    letter-spacing: 0.9px;
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        font-size: 14px;
-        letter-spacing: 0.7px;
-    }
+    display: flex;
+    align-items: center;
+    gap: 16px;
 `;
 
 export const Span = styled.span`
     color: ${({ theme }) => theme.paragraph};
-    transition: color 0.3s;
-    padding: 0 16px;
+    font-size: 18px;
+    line-height: 1.5;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        padding: 0 8px;
+        font-size: 14px;
     }
 `;
 
-export const Image = styled(Ellipse)`
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        width: 6px;
-        height: 6px;
-    }
+export const Image = styled.img`
+    width: 48px;
+    height: 48px;
 `;
