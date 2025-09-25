@@ -1,77 +1,113 @@
-import { useQuery } from "@tanstack/react-query";
-import { fethProjects } from "./fetchProjects";
 import {
   Description,
-  LinkWrapper,
-  Paraghaph,
   PortfolioItemStyled,
   PortfolioWrapper,
-  StyledLink,
   Title,
+  ProjectImage,
+  CategoriesWrapper,
+  CategoryTitle,
 } from "./styled";
 import { ReactElement } from "react";
 
-// Define the structure of a project
 interface Project {
-  id: number;
+  id: string;
   name: string;
-  description: string | null;
-  html_url: string;
-  homepage: string | null;
-  pushed_at: string;
-  updated_at: string;
+  description: string;
+  image: string;
+  url: string;
 }
 
+interface ProjectCategory {
+  title: string;
+  projects: Project[];
+}
+const projectCategories: ProjectCategory[] = [
+  {
+    title: "Regular web pages",
+    projects: [
+      {
+        id: "1",
+        name: "Photo Gallery",
+        description: "A simple photo gallery.",
+        image: "/projectsIMG/gallery.png",
+        url: "https://photo-galery-ruby.vercel.app/",
+      },
+      {
+        id: "2",
+        name: "Cofo Page",
+        description: "Cofo company landing page.",
+        image: "/projectsIMG/cofo.png",
+        url: "https://cofo.pl/",
+      },
+      {
+        id: "3",
+        name: "TVGreen",
+        description: "TVGreen multimedia platform.",
+        image: "/projectsIMG/tvGreen.png",
+        url: "https://tvgreen.eu/",
+      },
+    ],
+  },
+  {
+    title: "Three.js with 3D model pages",
+    projects: [
+      {
+        id: "4",
+        name: "Advanced Convai Avatar",
+        description: "Advanced conversational avatar.",
+        image: "/projectsIMG/advanAv.png",
+        url: "https://avatar-for-portfolio.vercel.app/",
+      },
+      {
+        id: "5",
+        name: "Animated 3D Logo",
+        description: "An animated 3D logo.",
+        image: "/projectsIMG/animatedLogo3d.png",
+        url: "https://carbon-tax-five.vercel.app/",
+      },
+
+      {
+        id: "6",
+        name: "Haunted House 3D",
+        description: "A haunted house in 3D.",
+        image: "/projectsIMG/house.png",
+        url: "https://haunted-house-3d-blue.vercel.app/",
+      },
+      {
+        id: "7",
+        name: "Galaxy 3D",
+        description: "A 3D galaxy.",
+        image: "/projectsIMG/galaxy3D.png",
+        url: "https://galaxy-3d-theta.vercel.app/",
+      },
+    ],
+  },
+];
+
 export const PortfolioProjects = (): ReactElement | null => {
-  const { isLoading, isPaused, error, data } = useQuery<Project[]>({
-    queryKey: ["projects"],
-    queryFn: fethProjects,
-  });
-
-  if (isPaused) {
-    return <div>Sprawdz połączenie z internetem</div>;
-  }
-  if (isLoading) {
-    return <div>Trwa ładowanie...</div>;
-  }
-  if (error instanceof Error) {
-    return <div>Nie udało się pobrać danych z powodu: {error.message}</div>;
-  }
-
-  // Sort data with the specific order
-  const sortedData = data
-    ? [...data].sort(
-        (a, b) =>
-          new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime()
-      )
-    : [];
+  const handleProjectClick = (url: string) => {
+    window.open(url, "_blank");
+  };
 
   return (
-    <PortfolioWrapper>
-      {sortedData.map((project: Project) => (
-        <PortfolioItemStyled key={project.id}>
-          <Title>{project.name}</Title>
-          <Description>{project.description}</Description>
-          <LinkWrapper>
-            {project.homepage && (
-              <>
-                <Paraghaph>Demo:</Paraghaph>
-                <StyledLink href={project.homepage} target="_blank">
-                  {project.name}
-                </StyledLink>
-              </>
-            )}
-            {project.html_url && (
-              <>
-                <Paraghaph>Code:</Paraghaph>
-                <StyledLink href={project.html_url} target="_blank">
-                  check in GitHub
-                </StyledLink>
-              </>
-            )}
-          </LinkWrapper>
-        </PortfolioItemStyled>
+    <CategoriesWrapper>
+      {projectCategories.map((category) => (
+        <div key={category.title}>
+          <CategoryTitle>{category.title}</CategoryTitle>
+          <PortfolioWrapper>
+            {category.projects.map(({ id, name, image, url, description }) => (
+              <PortfolioItemStyled
+                key={id}
+                onClick={() => handleProjectClick(url)}
+              >
+                <ProjectImage src={image} alt={name} />
+                <Title>{name}</Title>
+                <Description>{description}</Description>
+              </PortfolioItemStyled>
+            ))}
+          </PortfolioWrapper>
+        </div>
       ))}
-    </PortfolioWrapper>
+    </CategoriesWrapper>
   );
 };
